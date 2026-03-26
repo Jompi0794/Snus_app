@@ -30,7 +30,7 @@ h1 {
 main {
     margin-top: 40px;
     padding: 30px;
-    width: 90%;
+    width: 95%;
     max-width: 500px;
 
     background: white;
@@ -47,6 +47,9 @@ button {
     margin: 20px 0;
     padding: 15px 25px;
     font-size: 1.2rem;
+
+    width: 100%;
+    max-width: 300px;
 
     border: none;
     border-radius: 10px;
@@ -79,4 +82,24 @@ footer {
     margin-top: auto;
     padding: 20px;
     opacity: 0.7;
+}
+
+/* MOBILE OPTIMIZATION */
+@media (max-width: 480px) {
+    h1 {
+        font-size: 2rem;
+    }
+
+    main {
+        padding: 20px;
+    }
+
+    #prillor, #weekly-counter, #monthly-counter {
+        font-size: 2rem;
+    }
+
+    button {
+        font-size: 1.4rem;
+        padding: 18px;
+    }
 }
