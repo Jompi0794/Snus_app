@@ -1,4 +1,7 @@
-function getToday() { return (new Date()).toDateString(); }
+function getToday() {
+    return (new Date()).toDateString();
+}
+
 function getWeekNr() {
     let d = new Date();
     d.setHours(0,0,0,0);
@@ -7,7 +10,10 @@ function getWeekNr() {
     var weekNo = Math.ceil((((d - yearStart) / 86400000) + 1)/7);
     return d.getFullYear() + '-' + weekNo;
 }
-function getMonth() { return (new Date()).getFullYear() + '-' + ((new Date()).getMonth() + 1); }
+
+function getMonth() {
+    return (new Date()).getFullYear() + '-' + ((new Date()).getMonth() + 1);
+}
 
 let appData = {
     prillorToday: 0,
@@ -51,18 +57,18 @@ function checkReset() {
 loadData();
 checkReset();
 
-const prillorEl    = document.getElementById("prillor");
-const stPrillor    = document.getElementById("st-prillor");
-const stDosor      = document.getElementById("st-dosor");
-const stStocks     = document.getElementById("st-stocks");
-const stKostnad   = document.getElementById("st-kostnad");
+const prillorEl = document.getElementById("prillor");
+const stPrillor = document.getElementById("st-prillor");
+const stDosor = document.getElementById("st-dosor");
+const stStocks = document.getElementById("st-stocks");
+const stKostnad = document.getElementById("st-kostnad");
 
 function updateUI(){
-    prillorEl.textContent      = appData.prillorToday;
-    stPrillor.textContent      = appData.prillorToday;
-    stDosor.textContent        = appData.dosorWeek;
-    stStocks.textContent       = appData.stockMonth;
-    stKostnad.textContent     = appData.dosaCost.toFixed(2);
+    prillorEl.textContent = appData.prillorToday;
+    stPrillor.textContent = appData.prillorToday;
+    stDosor.textContent = appData.dosorWeek;
+    stStocks.textContent = appData.stockMonth;
+    stKostnad.textContent = appData.dosaCost.toFixed(2);
 }
 updateUI();
 
@@ -70,7 +76,8 @@ updateUI();
 document.getElementById("btn").onclick = () => {
     checkReset();
     appData.prillorToday++;
-    appdata.totalPrillor++;
+    appData.totalPrillor++;
+
     // Öka dosa automatiskt var 20:e prilla
     if (appData.totalPrillor % 20 === 0) {
         appData.dosorWeek++;
@@ -131,6 +138,7 @@ document.getElementById("stockBtn").onclick = () => {
 document.getElementById("resetBtn").onclick = () => {
     appData = {
         prillorToday: 0,
+        totalPrillor: 0,
         today: getToday(),
         dosorWeek: 0,
         week: getWeekNr(),
@@ -147,8 +155,10 @@ document.getElementById('showStatsBtn').onclick = () => {
     updateUI();
     document.getElementById('logg-page').style.display = 'none';
     document.getElementById('stats-page').style.display = 'block';
+    document.getElementById('bg-img').style.display = 'block';
 };
 document.getElementById('backToLoggBtn').onclick = () => {
     document.getElementById('logg-page').style.display = 'block';
     document.getElementById('stats-page').style.display = 'none';
+    document.getElementById('bg-img').style.display = 'none';
 };
