@@ -17,12 +17,21 @@ body {
 
 #bg-img {
     display: none;
-    position: fixed;
-    top: 20%;
-    left: 60px;
-    width: 220px;
-    z-index: 10;
-    pointer-events: none;
+    margin: 10px auto 0 auto; /* toppmarginal + centrerad */
+    width: 60vw;
+    max-width: 350px;
+    min-width: 110px;
+    border-radius: 24px;       /* snyggt rundade hörn */
+    opacity: 0;
+    transition: opacity 0.6s;
+    box-shadow: 0 8px 40px -8px #005fcc33;
+    pointer-events: none;      /* så att klick går igenom om bilden sticker ut */
+    background: white;         /* om du har png med genomskinlighet – annars ta bort */
+}
+
+#bg-img.visible {
+    display: block;
+    opacity: 1;
 }
 
 /* HEADER */
@@ -159,14 +168,9 @@ footer {
     }
 
     #bg-img {
-        position: static;
-        margin: 16px auto 0 auto;
-        top: unset;
-        left: unset;
-        width: 80vw;
-        max-width: 280px;
-        min-width: 80px;
-        z-index: 1;
-        opacity: 1;
-    }
+            width: 88vw;
+            max-width: 98vw;
+            min-width: 70px;
+            margin-top: 30px;
+        }
 }

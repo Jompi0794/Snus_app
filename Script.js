@@ -155,10 +155,15 @@ document.getElementById('showStatsBtn').onclick = () => {
     updateUI();
     document.getElementById('logg-page').style.display = 'none';
     document.getElementById('stats-page').style.display = 'block';
-    document.getElementById('bg-img').style.display = 'block';
+    const img = document.getElementById('bg-img');
+    img.style.display = 'block';
+    setTimeout(() => img.classList.add('visible'), 20);
 };
+
 document.getElementById('backToLoggBtn').onclick = () => {
     document.getElementById('logg-page').style.display = 'block';
     document.getElementById('stats-page').style.display = 'none';
-    document.getElementById('bg-img').style.display = 'none';
+    const img = document.getElementById('bg-img');
+    img.classList.remove('visible');
+    setTimeout(() => { img.style.display = 'none'; }, 600);
 };
