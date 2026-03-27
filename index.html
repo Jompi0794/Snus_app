@@ -8,27 +8,48 @@
 </head>
 
 <body>
-    <header>
-        <h1>Snus räknare för en fattig student</h1>
-    </header>
+<header>
+    <h1>Snus räknare för en fattig student</h1>
+</header>
 
-    <main>
-        <p>Tryck på knappen varje gång du tar en snus</p>
-        <button id="btn">Press Me</button>
-        <p>Antal snus du har tagit idag</p>
-        <p id="prillor">0</p>
-        <p>Antal dosor denna veckan:</p>
-        <p id="weekly-counter">0</p>
-        <p>Antal stocks denna månaden:</p>
-        <p id="monthly-counter">0</p>
-        <button id="resetBtn">Reset Data</button>
+<!-- Sida för counter -->
+<main id="logg-page">
+    <p>Tryck på knappen varje gång du tar en snus</p>
+    <button id="btn">Snusa nu</button>
 
-    </main>
+    <p>Antal snus du har tagit idag:</p>
+    <p id="prillor" class="counter">0</p>
 
-    <footer>
-        <p>&copy; Dj Jompi 2026</p>
-    </footer>
+    <div class="input-row">
+        <input type="number" id="dosaInput" placeholder="Antal dosor">
+        <input type="number" id="dosaPriceInput" placeholder="Pris/dosa">
+    </div>
+    <button id="dosaBtn">Köp dosa</button>
 
-    <script src="Script.js"></script>
+    <div class="input-row">
+        <input type="number" id="stockInput" placeholder="Antal stock">
+        <input type="number" id="stockPriceInput" placeholder="Pris/stock">
+    </div>
+    <button id="stockBtn">Köp stock</button>
+
+    <button id="resetBtn">Nollställ data</button>
+    <button id="showStatsBtn">Visa statistik</button>
+</main>
+
+<!-- Sida för statistik -->
+<main id="stats-page" style="display:none;">
+    <h2>Statistik</h2>
+    <p>Antal snus idag: <span id="st-prillor">0</span></p>
+    <p>Antal dosor denna veckan: <span id="st-dosor">0</span></p>
+    <p>Antal stocks denna månaden: <span id="st-stocks">0</span></p>
+    <p>Kostnad denna månaden: <span id="st-kostnad">0</span> kr</p>
+    <button id="backToLoggBtn">Tillbaka till logg</button>
+</main>
+
+<footer>
+    <p>&copy; Dj Jompi 2026</p>
+</footer>
+
+<script src="Script.js"></script>
 </body>
 </html>
