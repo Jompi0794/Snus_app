@@ -6,7 +6,6 @@
 
 body {
     font-family: Arial, sans-serif;
-
     background: linear-gradient(135deg, #0078ff, #00c6ff);
     min-height: 100vh;
 
@@ -26,8 +25,13 @@ h1 {
     font-size: 2.5rem;
 }
 
+h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
 /* MAIN CARD */
-main {
+main, section {
     margin-top: 40px;
     padding: 30px;
     width: 95%;
@@ -42,14 +46,13 @@ main {
     box-shadow: 0 10px 30px rgba(0,0,0,0.2);
 }
 
-/* BUTTON */
+/* BUTTONS */
 button {
-    margin: 20px 0;
+    margin: 15px auto;
     padding: 15px 25px;
     font-size: 1.2rem;
 
     width: 100%;
-    max-width: 300px;
 
     border: none;
     border-radius: 10px;
@@ -70,10 +73,48 @@ button:active {
 }
 
 /* COUNTERS */
-#prillor, #weekly-counter, #monthly-counter {
+.counter {
     font-size: 2.5rem;
     font-weight: bold;
     margin: 10px 0 25px 0;
+    color: #0078ff;
+
+}
+
+/* INPUT ROW */
+.input-row {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: 10px 0 5px 0;
+}
+
+/* INPUT FIELDS */
+input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+
+    border: 2px solid #0078ff;
+    border-radius: 10px;
+    outline: none;
+
+    transition: 0.2s;
+}
+
+input[type="number"]:focus {
+    border-color: #005fcc;
+    box-shadow: 0 0 5px rgba(0, 120, 255, 0.4);
+}
+
+/* STATISTICS PAGE */
+#stats-page p {
+    font-size: 1.3rem;
+    margin: 12px 0;
+}
+
+#stats-page span {
+    font-weight: bold;
     color: #0078ff;
 }
 
@@ -90,16 +131,20 @@ footer {
         font-size: 2rem;
     }
 
-    main {
+    main, section {
         padding: 20px;
     }
 
-    #prillor, #weekly-counter, #monthly-counter {
+    .counter {
         font-size: 2rem;
     }
 
     button {
-        font-size: 1.4rem;
-        padding: 18px;
+        width: 220px;
+        font-size: 1.2rem;
+    }
+
+    input[type="number"] {
+        width: 100px;
     }
 }
