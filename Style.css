@@ -157,4 +157,16 @@ footer {
     input[type="number"] {
         width: 100px;
     }
+
+    #bg-img {
+        position: static;
+        margin: 16px auto 0 auto;
+        top: unset;
+        left: unset;
+        width: 80vw;
+        max-width: 280px;
+        min-width: 80px;
+        z-index: 1;
+        opacity: 1;
+    }
 }
