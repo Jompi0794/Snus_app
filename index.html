@@ -5,6 +5,17 @@
     <title>Snus Counter</title>
     <link rel="stylesheet" href="Style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- PWA Meta Tags -->
+    <meta name="theme-color" content="#0078ff">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Snus">
+
+    <!-- Manifest -->
+    <link rel="manifest" href="/Snus_app/manifest.json">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 192 192'><rect fill='%230078ff' width='192' height='192'/><text x='50%' y='50%' font-size='100' fill='white' text-anchor='middle' dominant-baseline='middle' font-weight='bold'>S</text></svg>">
 </head>
 
 <body>
@@ -51,5 +62,14 @@
 </footer>
 <img src="IMG_0760.jpg" alt="Bild på Theo" id="bg-img">
 <script src="Script.js"></script>
+
+<script>
+  // Registrera service worker för PWA och offline-support
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('/Snus_app/service-worker.js')
+      .then(reg => console.log('✅ Service Worker registrerad'))
+      .catch(err => console.log('Service Worker error:', err));
+  }
+</script>
 </body>
 </html>
